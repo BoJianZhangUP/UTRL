@@ -1,6 +1,6 @@
 clear;
 % parameters seting
-net='repvgg';      %% AlexNet, resnet101, mobilenetv2,resnet50,resnet18
+net='repvgg';      
 test_set='paris6k'; %% oxford5k, roxford, ......
 layers='mul4_24';
 datapath='../data/';
@@ -33,7 +33,7 @@ if  strcmpi(test_set,'oxford105k') || strcmpi(test_set,'paris106k')
     test_files = dir(fullfile(datapath,[test_set,'_mul4_24'],'*.mat'));
     nquery_files = dir(fullfile(datapath,[query_set,'_nquery_mul4_24'],'*.mat'));
 else
-    test_files = dir(fullfile(datapath,test_set,'*.mat'));
+    test_files = dir(fullfile(datapath,[test_set,'_mul4_24'],'*.mat'));
 end
 train_files = dir(fullfile(datapath,[train_set,'_mul4_24'],'*.mat'));
 
