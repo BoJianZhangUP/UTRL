@@ -1,3 +1,7 @@
+% Please download the dataset(oxford5k,paris6k,roxford,rparis) and repvgg model (imagenet_repvggplus_L2pse_deploy) first and put them in the  data’ folder.
+
+extract_repvgg_features;
+
 clear;
 % parameters seting
 net='repvgg';      
