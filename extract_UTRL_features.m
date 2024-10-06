@@ -1,4 +1,4 @@
-function features=extrsct_features(files,list,SD)
+function features=extract_UTRL_features(files,list,SD)
 features=[];
 
 parfor i=1:size(files,1)
