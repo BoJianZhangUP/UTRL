@@ -7,7 +7,7 @@ clear;
 net='repvgg';      
 test_set='paris6k'; %% oxford5k, roxford, ......
 layers='mul4_24';
-datapath='../data/';
+datapath='data/';
 qe=10;
 %%%%%%%% Import feature paths %%%%%%%%%%%
 switch test_set
