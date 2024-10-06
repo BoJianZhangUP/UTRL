@@ -42,12 +42,12 @@ SD=standard_deviation(train_files);
 
 %%%%% Use the UTRL method for test sets %%%%%%
 eval(['load gnd_' test_set '.mat']);
-test_features=extrsct_features(test_files,imlist,SD);
+test_features=extract_UTRL_features(test_files,imlist,SD);
 test_features_normalize=normalize(test_features,2,"norm");
 
 %%%%% Use the UTRL method for train sets %%%%%%
 eval(['load gnd_' train_set '.mat']);
-train_features=extrsct_features(train_files,imlist,SD);
+train_features=extract_UTRL_features(train_files,imlist,SD);
 train_features_normalize=normalize(train_features,2,"norm");
 
 %%%%% Use the UTRL method for query images %%%%%%
@@ -57,7 +57,7 @@ if ~exist("q_name","var")
     qidx=priorindex_queries;
 end
 if size(nquery_files,1)==70
-    query_nocrop_features=extrsct_features(nquery_files,q_name,SD);
+    query_nocrop_features=extract_UTRL_features(nquery_files,q_name,SD);
     query_nocrop_features_normalize=normalize(query_nocrop_features,2,"norm");
 else
     query_nocrop_features_normalize=test_features_normalize(qidx,:);
