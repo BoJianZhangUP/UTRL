@@ -3,6 +3,8 @@ Official matlab Implementation of the paper “Locating Target Regions for Image
 
 Image data and features can be downloaded via the following link：https://pan.baidu.com/s/1reESRGJkWRligvCFCjkkdg?pwd=xq6w Retrieve code：xq6w 
 
+Create a ‘data’ folder and put the downloaded files under the ‘data’ folder.
+
 Just download the code and execute main.m.
 
 For any queries regarding the paper and code you can contact us at: zbjyouxiang2020@163.com
