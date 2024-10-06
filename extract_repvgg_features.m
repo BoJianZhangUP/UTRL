@@ -30,6 +30,23 @@ else
             fprintf('Processed: %d\n', i);
         end
     end
+%%% query features
+    load ('gnd_oxford5k.mat');
+    mkdir('data\oxford5k_nquery_mul4_24');
+    for i=1:length(q_name)
+        imgPath = [datasetPath(i).folder,'\',q_name{i},'.jpg'];
+        im = imread(imgPath);
+     
+        [h,w,~]=size(im);
+
+
+        if w<minsize || h<minsize
+            im = imresize(im, minsize/min(h,w));
+        end
+        fearures = activations(net,im,layer,'OutputAs','channels');
+        parsave(['data\oxford5k_nquery_mul4_24\',q_name{i},'.mat'],fearures);
+
+    end
     fprintf('Processing complete!\n');
 end
 
@@ -67,6 +84,23 @@ else
             fprintf('Processed: %d\n', i);
         end
     end
+    %%% query features
+    load ('gnd_paris6k.mat');
+    mkdir('data\paris6k_nquery_mul4_24');
+    for i=1:length(q_name)
+        imgPath = [datasetPath(i).folder,'\',q_name{i},'.jpg'];
+        im = imread(imgPath);
+     
+        [h,w,~]=size(im);
+
+
+        if w<minsize || h<minsize
+            im = imresize(im, minsize/min(h,w));
+        end
+        fearures = activations(net,im,layer,'OutputAs','channels');
+        parsave(['data\paris6k_nquery_mul4_24\',q_name{i},'.mat'],fearures);
+
+    end
     fprintf('Processing complete!\n');
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,6 +137,24 @@ else
             fprintf('Processed: %d\n', i);
         end
     end
+    %%% query features
+    load ('gnd_roxford.mat');
+    q_name=qimlist;
+    mkdir('data\roxford_nquery_mul4_24');
+    for i=1:length(q_name)
+        imgPath = [datasetPath(i).folder,'\',q_name{i},'.jpg'];
+        im = imread(imgPath);
+     
+        [h,w,~]=size(im);
+
+
+        if w<minsize || h<minsize
+            im = imresize(im, minsize/min(h,w));
+        end
+        fearures = activations(net,im,layer,'OutputAs','channels');
+        parsave(['data\roxford_nquery_mul4_24\',q_name{i},'.mat'],fearures);
+
+    end
     fprintf('Processing complete!\n');
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,10 +162,10 @@ clear
 rparis_folderPath = fullfile('data', 'rparis_mul4_24');
 
 if exist(rparis_folderPath, 'dir') && numel(dir(rparis_folderPath)) > 2
-fprintf('Folder %s already exists。\n', rparis_folderPath);
-    
+    fprintf('Folder %s already exists。\n', rparis_folderPath);
+
 else
-    
+
     mkdir(rparis_folderPath);
     fprintf('Folder %s Created。\n', rparis_folderPath);
 
@@ -138,6 +190,21 @@ else
         if mod(i, 1000) == 0
             fprintf('Processed: %d\n', i);
         end
+    end
+    %%% query features
+    load ('gnd_rparis.mat');
+    q_name=qimlist;
+    mkdir('data\rparis_nquery_mul4_24');
+    for i=1:length(q_name)
+        imgPath = [datasetPath(i).folder,'\',q_name{i},'.jpg'];
+        im = imread(imgPath);  
+        [h,w,~]=size(im);
+        if w<minsize || h<minsize
+            im = imresize(im, minsize/min(h,w));
+        end
+        fearures = activations(net,im,layer,'OutputAs','channels');
+        parsave(['data\rparis_nquery_mul4_24\',q_name{i},'.mat'],fearures);
+
     end
     fprintf('Processing complete!\n');
 end
