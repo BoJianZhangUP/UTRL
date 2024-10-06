@@ -1,5 +1,5 @@
 % Please download the dataset(oxford5k,paris6k,roxford,rparis) and repvgg model (imagenet_repvggplus_L2pse_deploy) first and put them in the  data’ folder.
-
+% Image data and features can be downloaded via the following link：https://pan.baidu.com/s/1reESRGJkWRligvCFCjkkdg?pwd=xq6w Retrieve code：xq6w
 extract_repvgg_features;
 
 clear;
