@@ -43,8 +43,8 @@ else
         if w<minsize || h<minsize
             im = imresize(im, minsize/min(h,w));
         end
-        fearures = activations(net,im,layer,'OutputAs','channels');
-        parsave(['data\oxford5k_nquery_mul4_24\',q_name{i},'.mat'],fearures);
+        features = activations(net,im,layer,'OutputAs','channels');
+        parsave(['data\oxford5k_nquery_mul4_24\',q_name{i},'.mat'],features);
 
     end
     fprintf('Processing complete!\n');
@@ -97,8 +97,8 @@ else
         if w<minsize || h<minsize
             im = imresize(im, minsize/min(h,w));
         end
-        fearures = activations(net,im,layer,'OutputAs','channels');
-        parsave(['data\paris6k_nquery_mul4_24\',q_name{i},'.mat'],fearures);
+        features = activations(net,im,layer,'OutputAs','channels');
+        parsave(['data\paris6k_nquery_mul4_24\',q_name{i},'.mat'],features);
 
     end
     fprintf('Processing complete!\n');
@@ -151,8 +151,8 @@ else
         if w<minsize || h<minsize
             im = imresize(im, minsize/min(h,w));
         end
-        fearures = activations(net,im,layer,'OutputAs','channels');
-        parsave(['data\roxford_nquery_mul4_24\',q_name{i},'.mat'],fearures);
+        features = activations(net,im,layer,'OutputAs','channels');
+        parsave(['data\roxford_nquery_mul4_24\',q_name{i},'.mat'],features);
 
     end
     fprintf('Processing complete!\n');
@@ -202,8 +202,8 @@ else
         if w<minsize || h<minsize
             im = imresize(im, minsize/min(h,w));
         end
-        fearures = activations(net,im,layer,'OutputAs','channels');
-        parsave(['data\rparis_nquery_mul4_24\',q_name{i},'.mat'],fearures);
+        features = activations(net,im,layer,'OutputAs','channels');
+        parsave(['data\rparis_nquery_mul4_24\',q_name{i},'.mat'],features);
 
     end
     fprintf('Processing complete!\n');
